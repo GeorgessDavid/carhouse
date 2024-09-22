@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+/*Propiedades globales */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: "Lato", sans-serif;
+}
+
+header {
+    min-width: 100%;
+}
+
+.first-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #212526;
+    color: white;
+    padding: 0.5rem 0.5rem;
+}
+
+.redes i {
+    margin: 0 1rem;
+    cursor: pointer;
+    transition: all 300ms;
+    font-size: 2rem;
+}
+
+.redes i:hover {
+    text-shadow: 0 0 5px white;
+}
+
+.logo {
+    margin: 1rem;
+}
+
+.logo span {
+    font-size: 2rem;
+    margin: 0 0.2rem;
+}
+
+.lg-hub {
+    padding: 0.75rem 0.25rem;
+    background-color: #bb0502;
+    color: black;
+    border-radius: 7px;
+}
+
+.second-header {
+    display: flex;
+    justify-content: flex-end;
+    background-color: #bb0502;
+    color: black;
+}
+
+.second-header ul {
+    display: flex;
+    margin: 1rem;
+    list-style: none;
+}
+
+.second-header ul li {
+    font-weight: bold;
+    margin: 0 0.625rem;
+    text-transform: uppercase;
+}
+
+.second-header ul li a {
+    transition: all 300ms;
+    text-decoration: none;
+    color: black;
+}
+
+.second-header ul li a:hover {
+    color: white;
+}
+
+
+section {
+    margin: 1rem
+}
+
+section h2 {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+section article {
+    display: flex;
+    margin: 1rem 0;
+}
+
+section article p {
+    margin: 0 1rem;
+}
+
+.brands {
+    display: flex;
+    justify-content: space-around;
+}
+
+.brands img {
+    margin: 0 1rem;
+    width: 10%;
+    object-fit: contain
+}
+
+.models {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.model-card{
+    max-width: 20%;
+    min-width: 20%;
+    border: solid 1px #999999;
+    border-radius: 10px;
+    transition: all 300ms ease-out;
+    margin: 1rem;
+}
+
+.model-card:hover{
+    cursor: pointer;
+    box-shadow: 0 0 10px black;
+}
+.model-card img {
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: 0 1px 5px black;
+}
+
+.model-card h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin:0.5rem 1rem;
+}
+
+.model-card h4{
+    font-size: 1rem;
+    font-weight: bold;
+    margin:0.5rem 1rem;
+}
+
+.model-card p{
+    font-style: italic;
+    margin: 0.5rem 1rem;
+}
