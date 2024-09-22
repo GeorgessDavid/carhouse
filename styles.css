@@ -88,11 +88,6 @@ section h2 {
     font-weight: bold;
 }
 
-section article {
-    display: flex;
-    margin: 1rem 0;
-}
-
 section article p {
     margin: 0 1rem;
 }
@@ -108,14 +103,14 @@ section article p {
     object-fit: contain
 }
 
-.models {
+.models-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-wrap: wrap;
 }
 
 .model-card{
-    max-width: 20%;
+    max-width:20%;
     min-width: 20%;
     border: solid 1px #999999;
     border-radius: 10px;
