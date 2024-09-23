@@ -95,6 +95,7 @@ section article p {
 .brands {
     display: flex;
     justify-content: space-around;
+    margin-top: 1rem;
 }
 
 .brands img {
@@ -109,8 +110,8 @@ section article p {
     flex-wrap: wrap;
 }
 
-.model-card{
-    max-width:20%;
+.model-card {
+    max-width: 20%;
     min-width: 20%;
     border: solid 1px #999999;
     border-radius: 10px;
@@ -118,10 +119,11 @@ section article p {
     margin: 1rem;
 }
 
-.model-card:hover{
+.model-card:hover {
     cursor: pointer;
     box-shadow: 0 0 10px black;
 }
+
 .model-card img {
     width: 100%;
     object-fit: cover;
@@ -133,16 +135,16 @@ section article p {
 .model-card h3 {
     font-size: 1.5rem;
     font-weight: bold;
-    margin:0.5rem 1rem;
+    margin: 0.5rem 1rem;
 }
 
-.model-card h4{
+.model-card h4 {
     font-size: 1rem;
     font-weight: bold;
-    margin:0.5rem 1rem;
+    margin: 0.5rem 1rem;
 }
 
-.model-card p{
+.model-card p {
     font-style: italic;
     margin: 0.5rem 1rem;
 }
