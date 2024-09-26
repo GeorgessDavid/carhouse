@@ -22,6 +22,11 @@ header {
     padding: 0.5rem 0.5rem;
 }
 
+.first-header > .logo a{
+    text-decoration: none;
+    color: white;
+}
+
 .redes i {
     margin: 0 1rem;
     cursor: pointer;
@@ -84,7 +89,7 @@ section {
 }
 
 section h2 {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: bold;
 }
 
@@ -177,4 +182,12 @@ section article p {
 .model-card:hover p::-webkit-scrollbar-thumb {
     background-color: #818181;
     border: 2px solid #818181;
+}
+
+footer{
+    background-color: #212526;
+    width: 100%;
+    color: white;
+    padding: 1rem;
+    text-align: center;
 }
