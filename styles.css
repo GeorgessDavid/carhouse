@@ -22,7 +22,7 @@ header {
     padding: 0.5rem 0.5rem;
 }
 
-.first-header > .logo a{
+.first-header>.logo a {
     text-decoration: none;
     color: white;
 }
@@ -132,7 +132,7 @@ section article p {
 
 .model-card img {
     width: 100%;
-    height: 50%;
+    height: 39%;
     object-fit: cover;
     object-position: center;
     border-top-left-radius: 10px;
@@ -160,11 +160,12 @@ section article p {
     overflow-y: hidden;
 }
 
-.model-card:hover p{
+.model-card:hover p {
     overflow-y: auto;
 }
 
-.model-card p::-webkit-scrollbar, .model-card::-webkit-scrollbar-corner {
+.model-card p::-webkit-scrollbar,
+.model-card::-webkit-scrollbar-corner {
     background-color: transparent;
     width: 8px;
     height: 8px;
@@ -184,7 +185,7 @@ section article p {
     border: 2px solid #818181;
 }
 
-footer{
+footer {
     background-color: #212526;
     width: 100%;
     color: white;
