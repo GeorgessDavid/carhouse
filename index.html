@@ -24,6 +24,8 @@
             <ul>
                 <li><a href="#brands">Marcas</a></li>
                 <li><a href="#lastModels">Últimos Modelos</a></li>
+                <li><a href="#contactUs">Contáctanos</a></li>
+                <li><a href="#aboutUs">Sobre Nosotros</a></li>
             </ul>
         </nav>
     </header>
@@ -31,19 +33,25 @@
         <section id="brands">
             <h2>Marcas</h2>
             <hr>
-            <article class="brands">
+            <div class="brands">
                 <img src="./imgs/logos/audi.png" alt="audi.png">
                 <img src="./imgs/logos/bmw.png" alt="bmw.png">
                 <img src="./imgs/logos/fiat.png" alt="Fiat.png">
                 <img src="./imgs/logos/ford.png" alt="ford.png">
                 <img src="./imgs/logos/mercedes.png" alt="mercedes.png">
                 <img src="./imgs/logos/volkswagen.png" alt="volkswagen.png">
-            </article>
+            </div>
         </section>
         <section id="lastModels">
             <h2>Últimos Modelos</h2>
             <hr>
             <div class="models-container">
+                <div class="mc-left-handle" id="left-handle">
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+                <div class="mc-right-handle" id="right-handle">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
                 <article class="model-card">
                     <img src="./imgs/models/audi-a3.jpg" alt="audi-a3.jpg">
                     <h3>A3</h3> <!-- Nombre del modelo -->
@@ -130,7 +138,11 @@
                     <img src="./imgs/models/vw-golf.webp" alt="vw-golf.jpg">
                     <h3>Golf</h3> <!-- Nombre del modelo -->
                     <h4>Volkswagen</h4> <!-- Marca -->
-                    <p>El Volkswagen Golf es un hatchback compacto producido por Volkswagen desde 1974. Es conocido por su diseño versátil, confiabilidad y buena conducción. El Golf ha sido uno de los modelos más vendidos de Volkswagen, disponible en diferentes versiones, incluyendo motorizaciones a gasolina, diésel e híbridas. También existen variantes deportivas como el Golf GTI y el Golf R, que ofrecen un rendimiento más alto.</p> <!-- Descripción -->
+                    <p>El Volkswagen Golf es un hatchback compacto producido por Volkswagen desde 1974. Es conocido por
+                        su diseño versátil, confiabilidad y buena conducción. El Golf ha sido uno de los modelos más
+                        vendidos de Volkswagen, disponible en diferentes versiones, incluyendo motorizaciones a
+                        gasolina, diésel e híbridas. También existen variantes deportivas como el Golf GTI y el Golf R,
+                        que ofrecen un rendimiento más alto.</p> <!-- Descripción -->
                 </article>
                 <article class="model-card">
                     <img src="./imgs/models/bmw-m3.jpeg" alt="bmw-m3.jpg">
@@ -172,10 +184,93 @@
                 </article>
             </div>
         </section>
+        <section id="aboutUs">
+            <h2>Sobre Nosotros</h2>
+            <hr>
+            <div class="aboutUs-container">
+                <img src="./imgs/src/concesionary.webp" alt="aboutUs.jpg">
+                <div class="column">
+
+                    <div class="text">
+                        <h3>¿Quiénes somos?</h3>
+                        <p>En <strong>CarHouse</strong>, nos dedicamos a transformar la experiencia de comprar un
+                            automóvil
+                            en algo único. Con más de
+                            20 años en el mercado, ofrecemos una selección exclusiva de vehículos nuevos y seminuevos
+                            certificados,
+                            cuidadosamente inspeccionados para garantizar calidad y seguridad. Nos enorgullece brindar
+                            un
+                            servicio
+                            al cliente excepcional, con un enfoque en la transparencia y la confianza, para que cada
+                            persona
+                            encuentre el auto perfecto para sus necesidades.
+
+                            En CarHouse, más que vender autos, creamos relaciones duraderas basadas en la satisfacción y
+                            la
+                            pasión
+                            por el automovilismo. ¡Ven y descubre por qué somos la elección de miles de conductores!
+                        </p>
+                    </div>
+                    <div class="text">
+                        <h3>Nuestra Misión</h3>
+                        <p>En <strong><em>CarHouse</em></strong>, nuestra misión es ofrecer una experiencia de compra de
+                            automóviles que combine
+                            calidad, confianza y servicio personalizado. Nos esforzamos por proporcionar a nuestros
+                            clientes
+                            vehículos de primera categoría, garantizando la satisfacción y seguridad en cada compra,
+                            mientras creamos relaciones a largo plazo basadas en la integridad y el respeto.</p>
+                    </div>
+                    <div class="text">
+                        <h3>Nuestra Visión</h3>
+                        <p>Ser la concesionaria líder en el mercado automotriz, reconocida por nuestra innovación,
+                            atención
+                            al cliente de excelencia y compromiso con la calidad. Aspiramos a ser la primera opción para
+                            los
+                            conductores que buscan no solo un vehículo, sino también una experiencia de compra confiable
+                            y
+                            memorable.
+                        </p>
+                    </div>
+                </div>
+        </section>
+        <section id="contactUs">
+            <h2>Contáctanos</h2>
+            <hr>
+            <div class="contactUs-container">
+                <form action="#">
+                    <h3>Ingresá tus datos</h3>
+                    <div class="form-group">
+                        <input class="form-group-input" type="text">
+                        <label class="form-group-label" for="name">Nombre</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-group-input" type="text" />
+                        <label class="form-group-label" for="subname">Apellido</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-group-input" type="text" />
+                        <label class="form-group-label" for="email">Mail</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-group-input" type="text" />
+                        <label class="form-group-label" for="subject">Asunto</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea type="text" cols="10" rows="5"></textarea>
+                        <label class="form-group-label" for="message">Mensaje</label>
+                    </div>
+                    <button class="form-button">Enviar</button>
+                </form>
+                <div>
+                    <img src="./imgs/src/call_girl.jpg" alt="call_girl.jpg">
+                </div>
+            </div>
+        </section>
     </main>
     <footer>
         <span>© CarHouse 2024. Todos los derechos reservados. </span>
     </footer>
+    <script src="slider.js"></script>
 </body>
 
 </html>
