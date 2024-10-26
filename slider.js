@@ -60,11 +60,13 @@ let leftButton = document.getElementById('left-handle');
 
 // Acción de cada evento por click, derecho e izquierdo.
 rightButton.addEventListener('click', () => {
+    clearInterval();
     rightHandle();
     refreshArticles(articles, currentStart);
 });
 
 leftButton.addEventListener('click', () => {
+    clearInterval();
     leftHandle();
     refreshArticles(articles, currentStart);
 });
@@ -73,4 +75,4 @@ leftButton.addEventListener('click', () => {
 setInterval(() => {
     rightHandle();
     refreshArticles(articles, currentStart)
-}, 3000)
+}, 5000)
