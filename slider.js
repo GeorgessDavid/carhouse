@@ -1,5 +1,5 @@
 let articlesToShow = 4;
-let articles = [];
+let articles = new Array();
 let currentStart = 0;
 
 // Esta función agrega todos los elementos que tengan la clase "model-card" al arreglo de articles
