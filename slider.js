@@ -1,5 +1,5 @@
 let articlesToShow = 4;
-let articles = new Array();
+let articles = [];
 let currentStart = 0;
 
 // Esta función agrega todos los elementos que tengan la clase "model-card" al arreglo de articles
@@ -12,7 +12,7 @@ let setArticles = () => {
     }
 }
 
-// Función para responder al click del boton derecho.
+// Función para responder al click del botón derecho.
 let rightHandle = () => {
 
     if (currentStart >= articlesToShow) {
@@ -23,7 +23,7 @@ let rightHandle = () => {
 
 }
 
-// Función para responder al click del boton izquierdo.
+// Función para responder al click del botón izquierdo.
 let leftHandle = () => {
 
     if (currentStart <= 0) {
@@ -44,35 +44,36 @@ let refreshArticles = (articles, currentStart) => {
 }
 
 
-// Seteo de los articles al cargar la página.
+
+// Configuración de los artículos al cargar la página.
 window.addEventListener('load', () => {
+    
+    // Obtenemos del dom los botones de control
+    let rightButton = document.getElementById('right-handle');
+    let leftButton = document.getElementById('left-handle');
+    
+    // Acción de cada evento por click, derecho e izquierdo.
+    rightButton.addEventListener('click', () => {
+        clearInterval(timer);
+        rightHandle();
+        refreshArticles(articles, currentStart);
+    });
+
+    leftButton.addEventListener('click', () => {
+        clearInterval(timer);
+        leftHandle();
+        refreshArticles(articles, currentStart);
+    });
+
     setArticles();
     for (let i = 0; i < articlesToShow; i++) {
         articles[i].style.display = 'block';
     }
+    
+    let timer = setInterval(() => {
+        rightHandle();
+        refreshArticles(articles, currentStart)
+    }, 5000)
 })
 
 
-// Obtenemos del dom los botones de control
-let rightButton = document.getElementById('right-handle');
-let leftButton = document.getElementById('left-handle');
-
-
-// Acción de cada evento por click, derecho e izquierdo.
-rightButton.addEventListener('click', () => {
-    clearInterval();
-    rightHandle();
-    refreshArticles(articles, currentStart);
-});
-
-leftButton.addEventListener('click', () => {
-    clearInterval();
-    leftHandle();
-    refreshArticles(articles, currentStart);
-});
-
-
-setInterval(() => {
-    rightHandle();
-    refreshArticles(articles, currentStart)
-}, 5000)

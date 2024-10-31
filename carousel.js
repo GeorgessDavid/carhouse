@@ -1,40 +1,37 @@
 let brandsToShow = 6;
-let carouselBrands = new Array();
+let carouselBrands = [];
 let carouselStart = 0;
 
-let setBrands = () =>{
+let setBrands = () => {
     let brand = document.querySelectorAll('.brands img');
 
-    for (let i = 0; i < brand.length; i++){
-        carouselBrands.push(brand[i]);
-        carouselBrands[i].style.display = 'none';
-    }
-}
+    // Guardar las marcas y ocultarlas inicialmente
+    brand.forEach((element) => {
+        carouselBrands.push(element);
+        element.style.display = 'none';
+    });
+};
 
 let carousel = (show, start, elements) => {
-    if (start >= show) {
-        start = 0;
-    }
+    // Ocultar todos los elementos
+    elements.forEach((element) => (element.style.display = 'none'));
 
-    for (let i=0; i < elements.length; i++){
-        elements[i].style.display = 'none';
+    // Mostrar el número correcto de elementos a partir de la posición de inicio
+    for (let i = 0; i < show; i++) {
+        const index = (start + i) % elements.length;
+        elements[index].style.display = 'block';
     }
-    
-    for (let i = start; i < start + show; i++) {
-        elements[i].style.display = 'block';
-    }
-
-}
+};
 
 window.addEventListener('load', () => {
     setBrands();
 
-    for (let i = 0; i < brandsToShow; i++) {
-        carouselBrands[i].style.display = 'block';
-    }
+    // Mostrar las primeras marcas al cargar la página
+    carousel(brandsToShow, carouselStart, carouselBrands);
 
+    // Configurar el intervalo para mover el carrusel cada 3 segundos
     setInterval(() => {
-        carouselStart += 1;
+        carouselStart = (carouselStart + 1) % carouselBrands.length;
         carousel(brandsToShow, carouselStart, carouselBrands);
-    }, 3000);
-})
+    }, 10000);
+});
