@@ -30,6 +30,28 @@
         </nav>
     </header>
     <main>
+        <div class="modal-background">
+        </div>
+        <div class="modal" aria-labelledby="modal" role="dialog" id="cookies-modal">
+            <div class="modal-header">
+                <h2>Uso de Cookies</h2>
+                <i class="fa-solid fa-x" aria-labelledby="close-modal" id="close"></i>
+            </div>
+            <div class="modal-body">
+                En CarHouse, utilizamos cookies para mejorar tu experiencia de navegación. Las cookies nos permiten
+                recordar tus preferencias y analizar el tráfico del sitio para ofrecerte una experiencia más
+                personalizada. 
+                <br>
+                <br>
+                Al hacer clic en "Aceptar", nos autorizas a usar todas las cookies, mientras que al
+                seleccionar "Rechazar", solo activaremos las esenciales para el funcionamiento básico del sitio. Para
+                más información, consulta nuestra Política de Cookies.
+            </div>
+            <div class="modal-footer">
+                <button class="modal-button" id="accept">Aceptar</button>
+                <button class="modal-button" id="reject">Rechazar</button>
+            </div>
+        </div>
         <section id="brands">
             <h2>Marcas</h2>
             <hr>
@@ -138,6 +160,7 @@
     <script src="main.js"></script>
     <script src="slider.js"></script>
     <script src="carousel.js"></script>
+    <script src="modal.js"></script>
 </body>
 
 </html>

@@ -25,7 +25,7 @@ let rightHandle = () => {
 
 // Función para responder al click del botón izquierdo.
 let leftHandle = () => {
-
+    
     if (currentStart <= 0) {
         return currentStart = articles.length - articlesToShow;
     }
@@ -53,11 +53,11 @@ window.addEventListener('load', () => {
     let leftButton = document.getElementById('left-handle');
     
     // Acción de cada evento por click, derecho e izquierdo.
-    rightButton.addEventListener('click', () => {
+    rightButton.onclick = () => {
         clearInterval(timer);
         rightHandle();
         refreshArticles(articles, currentStart);
-    });
+    };
 
     leftButton.addEventListener('click', () => {
         clearInterval(timer);
