@@ -162,6 +162,7 @@ window.addEventListener('load', () => {
     carModels.forEach(model => {
         carModelsContainer.innerHTML += 
         `<article class="model-card">
+            <span class="favorite"><i class="${model.liked ? 'fa-solid' : 'far'} fa-heart"></i> Agregar a favoritos</span>
             <img src="${model.img}" alt="${model.alt}" title="${model.model}">
             <h3>${model.model}</h3>
             <p>${model.description}</p>
