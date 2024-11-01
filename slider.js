@@ -14,8 +14,7 @@ let setArticles = () => {
 
 // Función para responder al click del botón derecho.
 let rightHandle = () => {
-
-    if (currentStart >= articlesToShow) {
+    if (currentStart >= articles.length || currentStart + articlesToShow >= articles.length) {
         return currentStart = 0;
     }
 
