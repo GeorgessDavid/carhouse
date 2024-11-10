@@ -166,31 +166,46 @@ let carModelsContainer = document.getElementById('models-container');
 
 
 window.addEventListener('load', () => {
+    let favorites = getFavorites();
+
+    favorites.map(favorite => {
+        carModels.find(model => model.id == favorite.id).liked = true;
+        setFavorites(favorite)
+    });
+
+
     brands.forEach(brand => {
-        brandsContainer.innerHTML += 
-        `<img src="${brand.src}" alt="${brand.alt}" title="${brand.name}">`
+        brandsContainer.innerHTML +=
+            `<img src="${brand.src}" alt="${brand.alt}" title="${brand.name}">`
     })
 
     carModels.forEach(model => {
-        carModelsContainer.innerHTML += 
-        `<article class="model-card" aria-id="${model.id}">
+        carModelsContainer.innerHTML +=
+            `<article class="model-card" aria-id="${model.id}">
             ${model.liked ? '<span class="liked"><i class="fas fa-heart"></i>En favoritos</span>' : '<span class="favorite"><i class="far fa-heart"></i>Agregar a favoritos</span>'}
             <img src="${model.img}" alt="${model.alt}" title="${model.model}">
             <h3>${model.model}</h3>
+            <h4>${model.brand}</h4>
             <p>${model.description}</p>
         </article>`
-
-        if (model.liked) {
-            setFavorites(model);
-        }
     })
 
     let removeFavoritesButton = document.querySelectorAll('[aria-label="remove-favorite-button"]');
 
     removeFavoritesButton.forEach(button => {
         button.onclick = () => {
-            removeFavorite(carModels.find(model => model.id == button.parentElement.parentElement.getAttribute('aria-id')));
-            setFavorites(carModels);
+            let model = carModels.find(model => model.id == button.parentElement.parentElement.getAttribute('aria-favorite-id'));
+            removeFavorite(model);
+
+            const index = favorites.indexOf(model);
+            
+            if (index > -1) {
+                favorites.splice(index, 1);
+            }
+
+
+            favorites.map(favorite => setFavorites(favorite));
+
         }
     })
 
@@ -199,6 +214,13 @@ window.addEventListener('load', () => {
     addFavoritesButton.forEach(button => {
         button.onclick = () => {
             let model = carModels.find(model => model.id == button.parentElement.getAttribute('aria-id'));
+
+            let checked = checkAdded(model);
+
+
+            if(checked){
+                return alert('Ya has añadido este auto a favoritos.')
+            }
             addFavorite(model);
             setFavorites(model);
         }

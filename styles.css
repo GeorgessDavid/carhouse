@@ -163,7 +163,7 @@ section article p {
     box-shadow: 0 0 10px white;
 }
 
-.model-card, .favorite-model-card {
+.model-card{
     max-width: 20%;
     min-width: 20%;
     border: solid 1px #999999;
@@ -173,6 +173,7 @@ section article p {
     padding-bottom: 1rem;
     position: relative;
 }
+
 
 .model-card:hover {
     cursor: pointer;
@@ -210,7 +211,7 @@ section article p {
 
 .liked i {
     color: rgb(221, 54, 25);
-    margin: 0 1rem;
+    margin: 0 0.5rem;
     font-size: 1.5rem;
 }
 
@@ -228,7 +229,7 @@ section article p {
     color: white;
 }
 
-.model-card img, .favorite-model-card img {
+.model-card img {
     width: 100%;
     height: 39%;
     object-fit: cover;
@@ -258,6 +259,46 @@ section article p {
     overflow-y: hidden;
 }
 
+
+.favorite-model-card{
+    width: 20%;
+    margin: 1rem;
+    position: relative;
+}
+.favorite-model-card img {
+    width: 100%;
+    height: 75%;
+    object-fit:cover;
+    object-position: center;
+    border-radius: 10px;
+    z-index: 10;
+}
+.favorite-model-card h3, .favorite-model-card h4{
+    position: absolute;
+}
+
+.favorite-model-card h3{
+    z-index: 1000;
+    color: white;
+    left: 5%;
+    bottom: 45%;
+}
+
+.favorite-model-card h4{
+    z-index: 1000;
+    color: white;
+    left: 5%;
+    bottom: 25%;
+}
+
+.fav-info{
+    position: absolute;
+    bottom: 25%;
+    z-index: 200;
+    width: 100%;
+    height: 40%;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.059), black);
+}
 .model-card:hover p {
     overflow-y: auto;
 }
@@ -568,7 +609,7 @@ footer {
     border:solid 2px white;
     position: absolute;
     top: 0.25rem;
-    right:10%;
+    right:15%;
     opacity: 0;
     transition: all 300ms ease-in;
 }
