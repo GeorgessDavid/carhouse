@@ -1,11 +1,12 @@
-let setFavorites = (car) => {
+
+let setFavorites = (car, container) => {
     let span = document.querySelector('[aria-labelledby="default-text"]');
-    span.style.display = 'none'
+    
+    if (span) span.style.display = 'none'
 
     if(car.length === 0){
         return span.style.display = 'block'; 
     }
-    let container = document.querySelector('.favorites-container');
 
     container.innerHTML +=
         `<article class="favorite-model-card" aria-favorite-id="${car.id}">
@@ -35,7 +36,7 @@ let addFavorite = (model) => {
 
 let removeFavorite = (model) => {
     localStorage.removeItem(`car_liked_${model.id}`);
-
+    
     return model.liked = false;
 }
 

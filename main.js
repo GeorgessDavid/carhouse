@@ -163,15 +163,20 @@ const carModels = [
 // Variables
 let brandsContainer = document.getElementById('brands-container');
 let carModelsContainer = document.getElementById('models-container');
+let favoritesContainer = document.querySelector('.favorites-container');
+
 
 
 window.addEventListener('load', () => {
     let favorites = getFavorites();
 
-    favorites.map(favorite => {
-        carModels.find(model => model.id == favorite.id).liked = true;
-        setFavorites(favorite)
-    });
+    if (favorites.length > 0) {
+
+        favorites.map(favorite => {
+            carModels.find(model => model.id == favorite.id).liked = true;
+            setFavorites(favorite, favoritesContainer);
+        });
+    }
 
 
     brands.forEach(brand => {
@@ -194,17 +199,24 @@ window.addEventListener('load', () => {
 
     removeFavoritesButton.forEach(button => {
         button.onclick = () => {
-            let model = carModels.find(model => model.id == button.parentElement.parentElement.getAttribute('aria-favorite-id'));
-            removeFavorite(model);
+            favoritesContainer.innerHTML = '';
+
+            let model = carModels.find(model => model.id == JSON.parse(localStorage.getItem(`car_liked_${button.parentElement.parentElement.getAttribute('aria-favorite-id')}`)).id);
+            removeFavorite(model, favoritesContainer);
 
             const index = favorites.indexOf(model);
-            
             if (index > -1) {
                 favorites.splice(index, 1);
             }
+            
+            favorites = getFavorites();
+            if (favorites.length > 0) {
 
-
-            favorites.map(favorite => setFavorites(favorite));
+                favorites.map(favorite => {
+                    carModels.find(model => model.id == favorite.id).liked = true;
+                    setFavorites(favorite, favoritesContainer);
+                });
+            }
 
         }
     })
@@ -218,11 +230,17 @@ window.addEventListener('load', () => {
             let checked = checkAdded(model);
 
 
-            if(checked){
+            if (checked) {
                 return alert('Ya has añadido este auto a favoritos.')
             }
             addFavorite(model);
-            setFavorites(model);
+            setFavorites(model, favoritesContainer);
+            
+            const modelLiked = document.querySelector(`[aria-id="${model.id}"] span`);
+
+            modelLiked.classList.remove('favorite');
+            modelLiked.classList.add('liked');
+            modelLiked.innerHTML = '<i class="fas fa-heart"></i>En favoritos';
         }
     })
 
