@@ -159,10 +159,43 @@ const carModels = [
     }
 ];
 
+const mostSold = [
+    {
+        id: 1,
+        brand: 'Audi',
+        model: 'RS6',
+        img: './imgs/models/audi-rs6.jpg',
+    },
+    {
+        id: 2,
+        brand: 'Volkswagen',
+        model: 'Golf',
+        img: './imgs/models/vw-golf.webp',
+    },
+    {
+        id: 3,
+        brand: 'Ford',
+        model: 'Maverick',
+        img: './imgs/models/ford-maverick.jpg',
+    },
+    {
+        id: 4,
+        brand: 'BMW',
+        model: 'M3',
+        img: './imgs/models/bmw-m3.jpeg',
+    },
+    {
+        id: 5,
+        brand: 'Mercedes Benz',
+        model: 'Clase G',
+        img: './imgs/models/mercedes-claseg.jpeg',
+    }
+]
 
 // Variables
 let brandsContainer = document.getElementById('brands-container');
 let carModelsContainer = document.getElementById('models-container');
+let mostSoldContainer = document.getElementById('mostSold-container');
 let favoritesContainer = document.querySelector('.favorites-container');
 
 
@@ -188,13 +221,23 @@ window.addEventListener('load', () => {
         carModelsContainer.innerHTML +=
             `<article class="model-card" aria-id="${model.id}">
             ${model.liked ? '<span class="liked"><i class="fas fa-heart"></i>En favoritos</span>' : '<span class="favorite"><i class="far fa-heart"></i>Agregar a favoritos</span>'}
-            <img src="${model.img}" alt="${model.alt}" title="${model.model}">
+            <img src="${model.img}" alt="${model.model}" title="${model.model}">
             <h3>${model.model}</h3>
             <h4>${model.brand}</h4>
             <p>${model.description}</p>
         </article>`
     })
 
+    for (let car of mostSold) {
+        mostSoldContainer.innerHTML +=`<article class="favorite-model-card" aria-favorite-id="${car.id}">
+                    <img src="${car.img}" alt="${car.alt}" title="${car.model}">
+                <div class="fav-info"> 
+                    <h3>${car.model}</h3>
+                
+                    <h4>${car.brand}</h4>
+                </div>        
+            </article>`
+    }
     let removeFavoritesButton = document.querySelectorAll('[aria-label="remove-favorite-button"]');
 
     removeFavoritesButton.forEach(button => {
@@ -208,7 +251,7 @@ window.addEventListener('load', () => {
             if (index > -1) {
                 favorites.splice(index, 1);
             }
-            
+
             favorites = getFavorites();
             if (favorites.length > 0) {
 
@@ -235,7 +278,7 @@ window.addEventListener('load', () => {
             }
             addFavorite(model);
             setFavorites(model, favoritesContainer);
-            
+
             const modelLiked = document.querySelector(`[aria-id="${model.id}"] span`);
 
             modelLiked.classList.remove('favorite');

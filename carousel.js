@@ -3,6 +3,7 @@ let carouselBrands = [];
 let carouselStart = 0;
 
 let setBrands = () => {
+    carouselBrands = [];
     let brand = document.querySelectorAll('.brands img');
 
     // Guardar las marcas y ocultarlas inicialmente
@@ -33,5 +34,5 @@ window.addEventListener('load', () => {
     setInterval(() => {
         carouselStart = (carouselStart + 1) % carouselBrands.length;
         carousel(brandsToShow, carouselStart, carouselBrands);
-    }, 10000);
+    }, 3000);
 });
